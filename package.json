@@ -1,0 +1,21 @@
+{
+  "name": "dockview-modular",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@types/node": "^24.2.1",
+    "dockview-core": "^4.7.1",
+    "lit": "^3.3.1"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2",
+    "typescript": "~5.9.2",
+    "vite": "^7.1.6"
+  }
+}

@@ -1,0 +1,32 @@
+html,
+body,
+#layout-container,
+#dockview-app {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+
+  color: white;
+  background-color: black;
+}
+
+#layout-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#topBar {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem;
+}
+
+#dockview-app {
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+}
