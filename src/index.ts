@@ -4,6 +4,11 @@ import "@/web-components";
 
 import "./styles/layout.css";
 
+// Delay initialisation until the DOM is ready so the Dockview container exists.
 document.addEventListener("DOMContentLoaded", () => {
-  setupDockview();
+  try {
+    setupDockview();
+  } catch (error) {
+    console.error("Failed to set up Dockview", error);
+  }
 });

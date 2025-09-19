@@ -1,1 +1,1 @@
-export * from './WebComponentPanel'
+export * from "./InternalPanel";
