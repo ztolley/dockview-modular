@@ -46,4 +46,21 @@ A Vite plugin (`vite-plugins/dockviewPlugins.ts`) runs in both dev and build mod
 
 ### Example package
 
-An example package lives at `plugins/@ztolley/hello-panel/`. Its `package.json` exposes the `GreetingPanel` constructor declared in `index.js`, and the root `package.json` wires it in using an npm `file:` dependency so it is resolved like any other installed package.
+An example package lives at `plugins/@ztolley/hello-panel/`. It is a standalone Vite + TypeScript project that builds to `dist/hello-panel.js`. The parent application depends on it via an npm `file:` dependency, so the compiled output is installed into `node_modules/@ztolley/hello-panel` and picked up automatically by the discovery plugin.
+
+```
+plugins/@ztolley/hello-panel/
+├── package.json          # library metadata, build scripts, Dockview manifest
+├── tsconfig.json         # editor settings for TypeScript sources
+├── tsconfig.build.json   # emits declaration files alongside the build
+├── vite.config.ts        # Vite library build configuration
+└── src/
+    ├── GreetingPanel.ts  # panel implementation
+    └── index.ts          # library entry point
+```
+
+Common development commands (run from `plugins/@ztolley/hello-panel`):
+
+- `npm run dev` – start a Vite dev server for local experimentation.
+- `npm run build` – clean, emit type declarations, and bundle the library. This runs automatically via the package’s `prepare` script when the parent installs dependencies.
+- `npm publish` – once satisfied, publish the built library to npm. The `files` field ensures only the compiled output is shipped.
